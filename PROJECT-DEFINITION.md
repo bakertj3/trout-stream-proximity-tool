@@ -1,8 +1,8 @@
-# Project: Trout Stream Property Evaluator
+# Project: Trout Stream Proximity Tool
 
 ## One-Sentence Pitch
 
-Trout Stream Property Evaluator helps property hunters and anglers assess proximity to Pennsylvania's Class A wild trout waters by analyzing PA Fish & Boat classification data and calculating distances to public access points.
+Trout Stream Proximity Tool helps property hunters and anglers assess proximity to Pennsylvania's Class A wild trout waters by analyzing PA Fish & Boat classification data and calculating distances to public access points.
 
 ## The Problem This Solves
 
@@ -474,7 +474,7 @@ This tool focuses on PUBLIC access points to avoid enabling trespassing on priva
 ## Project Repository Structure
 
 ```markdown
-trout-stream-evaluator/
+trout-stream-proximity-tool/
 ├── PROJECT-DEFINITION.md (this file)
 ├── UNKNOWNS.md
 ├── FUTURE.md
