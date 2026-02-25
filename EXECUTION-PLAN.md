@@ -1,4 +1,4 @@
-# Trout Stream Property Evaluator - 5-Week Execution Plan
+# Trout Stream Proximity Tool - 5-Week Execution Plan
 
 **Start Date:** February 21, 2026 (Friday)
 **Ship Date:** March 28, 2026 (Friday)
@@ -476,7 +476,7 @@ Use ADR template
 **LinkedIn post template:**
 
 ```text
-I just shipped Trout Stream Property Evaluator! 🎣
+I just shipped Trout Stream Proximity Tool! 🎣
 
 This tool helps property hunters in Pennsylvania assess proximity to Class A wild trout waters using GIS analysis.
 

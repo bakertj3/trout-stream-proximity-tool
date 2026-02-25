@@ -1,4 +1,4 @@
-# Trout Stream Property Evaluator - Unknowns
+# Trout Stream Proximity Tool - Unknowns
 
 Last Updated: February 21, 2026
 
@@ -10,12 +10,18 @@ These are blockers. Must research and decide in Week 1.
 
 ### Technology Decisions (60 min total)
 
-- [ ] **GIS Library Choice** (30 min)
+- [x] **GIS Library Choice** (30 min)
   - GeoPandas vs PostGIS vs ArcPy
   - Research budget: 30 minutes
   - Decision criteria: Ease of learning, AI agent support, documentation
-  - **Status:** Not started
-  - **Decision:** [To be filled in Phase 1]
+  - **Status:** Complete
+  - **Decision:** GeoPandas
+  - **Rationale:**
+    - leverages pandas, which is common package
+    - free to use
+    - no database (PostGIS has PostgreSQL back end - possible fo V2)
+    - well documented
+    - other users can use app without licensing
 
 - [ ] **Geocoding Service** (15 min)
   - Census Bureau Geocoder vs Google Maps API
