@@ -35,8 +35,8 @@
 
 **Output:**
 
-- [ ] Decision documented in UNKNOWNS.md
-- [ ] Ready to install chosen library
+- [x] Decision documented in UNKNOWNS.md
+- [x] Ready to install chosen library
 
 ---
 
@@ -56,9 +56,10 @@
 
 **Output:**
 
-- [ ] Data source URLs documented
-- [ ] Know whether public access data exists
-- [ ] Identified fallback if needed
+- [x] Data source URLs documented
+  - <https://mapservices.pasda.psu.edu/server/rest/services/pasda/PAFishBoat/MapServer>
+- [x] Know whether public access data exists
+- [x] Identified fallback if needed
 
 ---
 

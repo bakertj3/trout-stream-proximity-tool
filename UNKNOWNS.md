@@ -1,6 +1,6 @@
 # Trout Stream Proximity Tool - Unknowns
 
-Last Updated: February 21, 2026
+Last Updated: February 25, 2026
 
 ---
 
@@ -45,19 +45,24 @@ These need proof-of-concept before committing to approach.
 
 ### Data Source Validation (90 min spike)
 
-- [ ] **PA Fish & Boat Class A Data Accessibility**
+- [x] **PA Fish & Boat Class A Data Accessibility**
   - Question: Can we programmatically access Class A Wild Trout data?
   - Where to look: <https://gis.pfbc.pa.gov/>
   - Validation: Download or fetch sample data
-  - **Status:** Not started
-  - **Result:** [To be filled in spike]
+  - **Status:** Found
+  - **Result:**
+    - **REST API for PA trout waters**
+    - URL: <https://mapservices.pasda.psu.edu/server/rest/services/pasda/PAFishBoat/MapServer>
+    - Contains all layers of trout streams
+    - Contains layers for confirmed public or semi-public access
 
-- [ ] **Public Access Point Data Existence**
+- [x] **Public Access Point Data Existence**
   - Question: Does PA Fish & Boat publish public access GIS data?
   - Fallback: State Game Lands boundaries from PA Game Commission
   - Fallback 2: State Forest boundaries from DCNR
-  - **Status:** Not started
-  - **Result:** [To be filled in spike]
+  - **Status:** Found
+  - **Result:**
+    - See REST API for PA trout waters in previous section
 
 - [ ] **County Data Availability**
   - Question: Is data available for Centre, Clinton, Lycoming counties?
