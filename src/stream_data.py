@@ -5,9 +5,6 @@ def load_data():
     stream_data = gpd.read_file("data/Class A Trout Streams.geojson")
     return stream_data
 
-def streams_in_county(stream_data, county_name):
-    return stream_data[stream_data["COUNTY_NAM"].str.contains(county_name)]
-
 def find_nearest_stream(streams, lat, lng):
     """find_nearest_stream to a Lat/Lng point and return distance in miles.
     
