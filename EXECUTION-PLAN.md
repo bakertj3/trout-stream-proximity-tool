@@ -16,11 +16,11 @@
 
 ---
 
-## Week 1: Feb 21-27 (Research & Setup)
+## Week 1: Feb 23-Mar 1 (Research & Setup)
 
 ***Phase 1: Time-Boxed Research (4 hours MAX)***
 
-### Monday, Feb 24 - Session 1 (30 min)
+### Tuesday, Feb 24 - Session 1 (30 min)
 
 **Goal:** Decide on GIS library
 
@@ -40,7 +40,7 @@
 
 ---
 
-### Wednesday, Feb 26 - Session 2 (30 min)
+### Wednesday, Feb 25 - Session 2 (30 min)
 
 **Goal:** Verify PA data exists and is accessible
 
@@ -63,7 +63,7 @@
 
 ---
 
-### Friday, Feb 28 - Session 3 (90 min)
+### Friday, Feb 27 - Session 3 (90 min)
 
 **Goal:** Get GeoPandas working with hello world
 
@@ -81,12 +81,13 @@
 
 ```python
 import geopandas as gpd
+from geodatasets import get_path
 
 # Load example data
-world = gpd.read_file(gpd.datasets.get_path('naturalearth_lowres'))
+world = gpd.read_file(get_path("nybb")
 
 # Print info
-print(f"Loaded {len(world)} countries")
+print(f"Loaded {len(world)} boroughs")
 print(world.head())
 
 # Success!
@@ -102,7 +103,7 @@ print(world.head())
 
 ---
 
-### Saturday/Sunday, Mar 1-2 - Session 4 (90 min)
+### Saturday/Sunday, Feb 28/Mar 1 - Session 4 (90 min)
 
 **Goal:** Prove you can load PA stream data
 
@@ -130,7 +131,7 @@ print(world.head())
 
 ---
 
-### Sunday, Mar 2 - Weekly Review (30 min)
+### Sunday, Mar 1 - Weekly Review (30 min)
 
 **Review questions:**
 
@@ -151,11 +152,11 @@ print(world.head())
 
 ---
 
-## Week 2: Mar 3-9 (Core Development Begins)
+## Week 2: Mar 3-8 (Core Development Begins)
 
 ### Phase 2: TDD Development
 
-### Monday, Mar 3 - Session 5 (90 min)
+### Tuesday, Mar 3 - Session 5 (90 min)
 
 **Goal:** First real test - load stream data
 
@@ -184,7 +185,7 @@ def test_can_load_class_a_streams():
 
 ---
 
-### Wednesday, Mar 5 - Session 6 (90 min)
+### Wednesday, Mar 4 - Session 6 (90 min)
 
 **Goal:** Filter streams by county
 
@@ -212,7 +213,7 @@ def test_filter_streams_by_county():
 
 ---
 
-### Friday, Mar 7 - Session 7 (90 min)
+### Friday, Mar 6 - Session 7 (90 min)
 
 **Goal:** Geocoding - address to coordinates
 
@@ -242,7 +243,7 @@ def test_geocode_pa_address():
 
 ---
 
-### Saturday/Sunday, Mar 8-9 - Session 8 (2 hours)
+### Saturday/Sunday, Mar 7-8 - Session 8 (2 hours)
 
 **Goal:** Distance calculation
 
@@ -275,7 +276,7 @@ def test_find_nearest_stream():
 
 ---
 
-### Sunday, Mar 9 - Weekly Review (30 min)
+### Sunday, Mar 8 - Weekly Review (30 min)
 
 **Progress check:**
 
@@ -289,9 +290,9 @@ def test_find_nearest_stream():
 
 ---
 
-## Week 3: Mar 10-16 (Integration)
+## Week 3: Mar 9-15 (Integration)
 
-### Monday, Mar 10 - Session 9 (90 min)
+### Tuesday, Mar 10 - Session 9 (90 min)
 
 **Goal:** Public access point identification
 
@@ -303,7 +304,7 @@ def test_find_nearest_stream():
 
 ---
 
-### Wednesday, Mar 12 - Session 10 (90 min)
+### Wednesday, Mar 11 - Session 10 (90 min)
 
 **Goal:** End-to-end integration test
 
@@ -326,7 +327,7 @@ def test_full_workflow():
 
 ---
 
-### Friday, Mar 14 - Session 11 (90 min)
+### Friday, Mar 13 - Session 11 (90 min)
 
 **Goal:** Error handling
 
@@ -340,7 +341,7 @@ def test_full_workflow():
 
 ---
 
-### Saturday/Sunday, Mar 15-16 - Session 12 (2 hours)
+### Saturday/Sunday, Mar 14-15 - Session 12 (2 hours)
 
 **Goal:** Map visualization prototype
 
@@ -353,7 +354,7 @@ def test_full_workflow():
 
 ---
 
-### Sunday, Mar 16 - Weekly Review (30 min)
+### Sunday, Mar 15 - Weekly Review (30 min)
 
 **Progress check:**
 
@@ -366,9 +367,9 @@ def test_full_workflow():
 
 ---
 
-## Week 4: Mar 17-23 (UI & Polish)
+## Week 4: Mar 16-22 (UI & Polish)
 
-### Monday, Mar 17 - Session 13 (90 min)
+### Tuesday, Mar 17 - Session 13 (90 min)
 
 **Goal:** Streamlit app skeleton
 
@@ -380,7 +381,7 @@ def test_full_workflow():
 
 ---
 
-### Wednesday, Mar 19 - Session 14 (90 min)
+### Wednesday, Mar 18 - Session 14 (90 min)
 
 **Goal:** Integrate map into Streamlit
 
@@ -392,7 +393,7 @@ def test_full_workflow():
 
 ---
 
-### Friday, Mar 21 - Session 15 (90 min)
+### Friday, Mar 20 - Session 15 (90 min)
 
 **Goal:** Polish UI
 
@@ -405,7 +406,7 @@ def test_full_workflow():
 
 ---
 
-### Saturday/Sunday, Mar 22-23 - Session 16 (2 hours)
+### Saturday/Sunday, Mar 21-22 - Session 16 (2 hours)
 
 **Goal:** Code cleanup
 
@@ -418,7 +419,7 @@ def test_full_workflow():
 
 ---
 
-### Sunday, Mar 23 - Weekly Review (30 min)
+### Sunday, Mar 22 - Weekly Review (30 min)
 
 **Progress check:**
 
@@ -430,9 +431,9 @@ def test_full_workflow():
 
 ---
 
-## Week 5: Mar 24-28 (Documentation & Ship)
+## Week 5: Mar 23-29 (Documentation & Ship)
 
-### Monday, Mar 24 - Session 17 (90 min)
+### Tuesday, Mar 24 - Session 17 (90 min)
 
 **Goal:** README.md
 
@@ -447,7 +448,7 @@ def test_full_workflow():
 
 ---
 
-### Wednesday, Mar 26 - Session 18 (90 min)
+### Wednesday, Mar 25 - Session 18 (90 min)
 
 **Goal:** Write ADRs
 
@@ -461,7 +462,7 @@ Use ADR template
 
 ---
 
-### Friday, Mar 28 - Session 19 (2 hours)
+### Friday, Mar 27 - Session 19 (2 hours)
 
 #### SHIP DAY
 
@@ -492,7 +493,7 @@ Check it out: [GitHub link]
 
 ---
 
-### Sunday, Mar 30 - Final Review (30 min)
+### Sunday, Mar 29 - Final Review (30 min)
 
 **Reflection:**
 
@@ -638,7 +639,7 @@ Copy this for each session:
 
 ---
 
-**Next Action:** Start Monday, Feb 24 with Session 1 (30 minutes - GIS library decision)
+**Next Action:** Start Tuesday, Feb 24 with Session 1 (30 minutes - GIS library decision)
 
 **Before then:**
 
