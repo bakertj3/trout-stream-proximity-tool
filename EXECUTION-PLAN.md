@@ -95,9 +95,9 @@ print(world.head())
 
 **Output:**
 
-- [ ] GeoPandas installed
-- [ ] Hello world code committed
-- [ ] First test passing
+- [x] GeoPandas installed
+- [x] Hello world code committed
+- [x] First test passing
 
 **If stuck >90 min:** Ask me for help immediately
 
