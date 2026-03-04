@@ -17,6 +17,7 @@ The AI provided:
 - TDD milestone suggestions
 - Time-boxed research phases
 - Accountability structure
+- Feedback and coaching
 
 I was responsible for:
 

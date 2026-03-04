@@ -88,3 +88,23 @@ a67e22c2c5e73240b2cea9b58d8c9afb11fc4fff
 ### Commit
 
 e0fc9a79e6bcea91bed52b129d92f14ca0778c22
+55955c69489199f3465f9b7404d1ee5eab6863bd
+
+## 3/1/2026 (Sunday) - Week 1 Review
+
+### what happened
+
+- started week one proof-of-concept setup with GeoPandas, PA Stream GIS Data
+- wrote Hello World test for GeoPandas using the nybb dataset
+- wrote a basic proximity/distance calculation using a lat/lng point to the nearest Class A trout stream in Centre county
+
+### what I learned
+
+- I want to own more of the code and not copy/paste from Claude
+- Pandas/GeoPandas is a powerful framework tool that might have application for my professional work, but there is a learning curve to traverse in getting to a useful working knowledge of the tools.  I want to understand how to do common operations so I'm not relying on Claude to provide the code needed for each development step.
+- The timeline needs to be adjusted in order to dig in to learning a bit more than originally expected.  Extending timeline by 3-4 weeks accordingly.
+
+### what's next
+
+- Next session I will dig into Pandas and take a dive into concepts, functionality, and application of the tool.
+- Each week, I will complete my Sunday weekly review and choose what the next week's plan is based on where the learning/work for the week landed.

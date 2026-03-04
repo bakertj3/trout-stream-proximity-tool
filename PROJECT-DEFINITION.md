@@ -39,8 +39,8 @@ This tool focuses on PUBLIC access points to avoid enabling trespassing on priva
 - [ ] Added to resume
 - [ ] Tagged as v1.0 release
 
-**Ship Date:** Friday, March 28, 2026
-**Kill Date:** Friday, April 4, 2026
+**Ship Date:** Friday, April 24, 2026
+**Kill Date:** Friday, May 1, 2026
 
 ---
 
@@ -190,8 +190,8 @@ This tool focuses on PUBLIC access points to avoid enabling trespassing on priva
 ## Timeline & Commitment
 
 **Start Date:** February 21, 2026 (Friday)
-**Ship Date:** March 28, 2026 (Friday) - 5 weeks
-**Kill Date:** April 4, 2026 (Friday) - 6 weeks
+**Ship Date:** April 24, 2026 (Friday) - 9 weeks
+**Kill Date:** May 1, 2026 (Friday) - 10 weeks
 
 **Time Commitment:** 8-10 hours/week
 
@@ -247,57 +247,16 @@ This tool focuses on PUBLIC access points to avoid enabling trespassing on priva
 
 **Deliverables:**
 
-- [ ] GeoPandas installed and working
-- [ ] PA stream data loaded in test script
-- [ ] First test passing
-- [ ] UNKNOWNS.md updated with findings
+- [x] GeoPandas installed and working
+- [x] PA stream data loaded in test script
+- [x] First test passing
+- [x] UNKNOWNS.md updated with findings
 
-### Week 2-3 (Feb 28 - Mar 13): Core Development
+### Post week 1:
 
-#### Phase 2: TDD Development
-
-- Data loading functions
-- Geocoding integration
-- Distance calculation
-- Public access identification
-
-**Deliverables:**
-
-- [ ] Address geocoding works
-- [ ] Stream data loads for 3 counties
-- [ ] Distance calculation tested
-- [ ] 5+ tests passing
-
-### Week 4 (Mar 14-20): Integration & Mapping
-
-- Map visualization
-- Streamlit interface
-- Full workflow integration
-- Error handling
-
-**Deliverables:**
-
-- [ ] Map displays correctly
-- [ ] End-to-end workflow works
-- [ ] Integration tests passing
-
-### Week 5 (Mar 21-28): Polish & Ship
-
-#### Phase 3: Documentation & Sharing
-
-- Code cleanup
-- README with setup instructions
-- ADRs written
-- Demo materials
-- LinkedIn post
-
-**Deliverables:**
-
-- [ ] README tested by someone else
-- [ ] 2-3 ADRs complete
-- [ ] Demo screenshot/video
-- [ ] v1.0 tagged and pushed
-- [ ] Shared publicly
+- made decision to pivot to an iterative week-by-week learning plan
+- placing more emphasis on learning the core Pandas framework workflows
+- shifting to leverage AI as coaching-focused learning model rather than a copy-paste model
 
 ---
 
