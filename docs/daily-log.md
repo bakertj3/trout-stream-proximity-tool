@@ -108,3 +108,65 @@ e0fc9a79e6bcea91bed52b129d92f14ca0778c22
 
 - Next session I will dig into Pandas and take a dive into concepts, functionality, and application of the tool.
 - Each week, I will complete my Sunday weekly review and choose what the next week's plan is based on where the learning/work for the week landed.
+
+## 3/3/2026 - 3/6/26 - Session 5
+
+### Plan
+
+- pivoted timeline plan based on desire to own the decisions and code instead of leveraging AI for code
+- learn the Pandas framework basics
+- document knowledge learned in docs/PANDAS-CHEATSHEET.md
+
+### What happened
+
+- created fake stream DataFrame to learn complete Pandas orientation
+  - topics:
+    - DataFrame properties
+    - basic DataFrame filtering
+    - sorting and aggregation to return desired data
+- used Class A Trout Streams.geojson to further learning on real dataset
+  - topics:
+    - dataset characteristics
+    - returning stream information (names, lengths, etc)
+    - filtering & returning data (longest stream name, streams with "creek" in the name, county with most streams)
+
+### What I learned
+
+- Better familiarity with pandas syntax
+- Found that I was overcomplicating a lot of the querying
+- learned about the pd.json_normalize function for flattening nested dictionary data (useful for streams dataset!)
+
+### What's next
+
+- next session: workflow mapping
+
+## 3/7/26 - Session 6
+
+### Plan
+
+- map workflow to understand all the big picture of the MVP app fucntionality
+- quantify steps in the app flow for better understanding of functionality needed for TDD development
+
+### What happened
+
+- Leveraged Claude as coach to help guide me through working out the basic framework of what the app does
+- Decided to use Folium for map display because it works seamlessly with GeoPandas and has minimal features (good for v1.0)
+- Decided to leverage stream data local to the app for speed & simplicity over API calls
+- Worked out overall flow of app
+
+### What I learned
+
+- Pros/cons of Folium, Plotly & Leaflet.js for Map display
+- full flow of app
+  - User inputs address
+  - Geocode address → lat/lng
+  - Load local Class A stream data
+  - Calculate distance from lat/lng to each stream
+  - Return nearest stream(s)
+  - Display results + Folium map showing location and stream
+
+### What's next
+
+- Research geocoding options (Census bureau vs Google API)
+- Pick a geocoding option
+- write first test for geocoding
