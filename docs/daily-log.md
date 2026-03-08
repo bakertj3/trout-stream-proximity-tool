@@ -158,12 +158,12 @@ e0fc9a79e6bcea91bed52b129d92f14ca0778c22
 
 - Pros/cons of Folium, Plotly & Leaflet.js for Map display
 - full flow of app
-  - User inputs address
-  - Geocode address → lat/lng
-  - Load local Class A stream data
-  - Calculate distance from lat/lng to each stream
-  - Return nearest stream(s)
-  - Display results + Folium map showing location and stream
+  1. User inputs address
+  2. Geocode address → lat/lng
+  3. Load local Class A stream data
+  4. Calculate distance from lat/lng to each stream
+  5. Return nearest stream(s)
+  6. Display results + Folium map showing location and stream
 
 ### What's next
 
