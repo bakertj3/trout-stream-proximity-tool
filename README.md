@@ -1,6 +1,14 @@
-# Development Methodology
 
-## AI-Assisted Project Planning
+# Trout Stream Proximity Tool
+
+## How to use
+
+- use requires procuring a google geocoding api key
+- use specific addresses
+
+## Development Methodology
+
+### AI-Assisted Project Planning
 
 This project used AI (Claude) to create a structured execution plan
 with realistic milestones and time-boxing. This approach helped combat

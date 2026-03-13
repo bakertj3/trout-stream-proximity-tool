@@ -170,3 +170,85 @@ e0fc9a79e6bcea91bed52b129d92f14ca0778c22
 - Research geocoding options (Census bureau vs Google API)
 - Pick a geocoding option
 - write first test for geocoding
+
+## 3/7/2026 - 3/8/2026 - Session 7
+
+### What happened
+
+- researched geocoding platform options - Census vs Google
+- decided to use Google Maps Geocoding API
+  - already have free developer account
+  - Google's geocoding API is more accruate for rural addresses - relevant to class A trout streams
+- wrote first test for invalid addresses, passes
+- created .env file to store API key
+- deleted existing google API key that was committed to GitHub in the open
+- recreated a new API key, stored in .env
+
+### What I learned
+
+- I refreshed knowledge on how to store secrets in .env vars in python
+- Learned what the output of Google's Geocoding API looks like
+- Navigating nested JSON structures from API sources
+- Learned how to assert raised exceptions for in python functions with pytest
+
+### What's next
+
+- Write next failing test for successful address geocode
+
+## 3/8/2026 - Week 2 Review
+
+### What happened
+
+- Reviewed week wins and accomplishments
+  - Focused learning on the Pandas framework
+  - Workflow outline and planning
+  - Compared geocoding APIs and decided on Google
+  - Wrote first test for geocoding functionality
+- Planned out Week 3 sessions & goals
+
+### What I learned
+
+- I jump to contingencies, edge cases, and user experience. Focusing on MVP is more difficult.
+- I need to continue to ask "what is good enough for v1"
+- Learned Pandas functionality and some simpler ways to calculate common data values
+- Learned about Pros/Cons of Google & Census Bureau geocoding APIs
+
+### What's next
+
+- Week 3 (March 10-15) plan outline
+  - Complete Geocoding (1-2 more tests)
+  - Integration address -> lat/lng -> nearest stream distance
+  - Start Folium map visualization
+
+## 3/10/2026 - Session 8
+
+### What happened
+
+- wrote failing TDD tests for address_geocode
+- made tests pass
+- evaluated merits of binding geocoding to Pennsylvania only
+- refactored address_geocode to load the API_Key only when module is loaded
+- evaluated where the orchestration layer should reside
+- decided that orchestration will reside in `src/proximity_analyzer.py` with main function `return_closest_stream()`
+
+### What I learned
+
+- learned about python design for orchestration layers and app vs main module focus
+- discovered that python can assert inequalities in this format `assert 39 <= result["lat"] <= 43`
+- furthered depth of TDD reasoning within python tests
+
+### What's next
+
+- write failing tests for `proximity_analyzer.py` module & `return_closest_stream()` function
+
+## 3/12/2026 - 3/13/2026 - Session 9
+
+### What happened
+
+- worked through TDD incremental steps to implement functionality in `proximity_analyzer.py`
+- wrestled with what to return for `return_closest_stream()` output
+- 
+
+### What I learned
+
+### What's next

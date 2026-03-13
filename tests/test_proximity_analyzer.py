@@ -1,0 +1,49 @@
+import src.proximity_analyzer as prox
+
+
+def test_return_closest_stream_should_have_dictionary_values():
+    # Arrange
+    address = "Harrisburg, PA"
+
+    # Act
+    result = prox.return_closest_stream(address)
+
+    # Assert
+    assert result["address_coords"] != None
+    assert result["nearest_stream_name"] != ""
+    assert result["nearest_stream_distance_miles"] > 0
+    assert result["stream_geometry"] != {}
+
+def test_return_closest_stream_should_have_latlng_keys_and_nonzero_values():
+    # Arrange
+    address = "Harrisburg, PA"
+
+    # Act
+    result = prox.return_closest_stream(address)
+
+    # Assert
+    assert list(result["address_coords"].keys()) == ["lat", "lng"]
+    assert result["address_coords"]["lat"]
+    assert isinstance(result["address_coords"]["lat"], float)
+    assert isinstance(result["address_coords"]["lng"], float)
+
+def test_return_closest_stream_name_should_have_non_empty_value():
+    # Arrange
+    address = "Harrisburg, PA"
+    
+    # Act
+    result = prox.return_closest_stream(address)
+
+    # Assert
+    assert len(result["nearest_stream_name"]) > 0
+
+def test_return_closest_stream_different_addresses_should_have_different_results():
+    # Arrange
+    address1 = "Harrisburg, PA"
+    address2 = "Pittsburgh, PA"
+    
+    # Arrange
+    result1 = prox.return_closest_stream(address1)
+    result2 = prox.return_closest_stream(address2)
+
+    assert result1["nearest_stream_name"] != result2["nearest_stream_name"]

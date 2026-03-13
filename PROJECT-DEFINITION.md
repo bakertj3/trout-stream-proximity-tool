@@ -252,7 +252,7 @@ This tool focuses on PUBLIC access points to avoid enabling trespassing on priva
 - [x] First test passing
 - [x] UNKNOWNS.md updated with findings
 
-### Post week 1:
+### Post week 1 notes
 
 - made decision to pivot to an iterative week-by-week learning plan
 - placing more emphasis on learning the core Pandas framework workflows

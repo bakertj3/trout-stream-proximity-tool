@@ -1,4 +1,5 @@
 import geopandas as gpd
+import pandas as pd
 from shapely.geometry import Point
 
 def load_data():
@@ -31,6 +32,3 @@ def find_nearest_stream(streams, lat, lng):
     distance_miles = distance_meters * 0.000621371
 
     return nearest_stream, distance_miles
-
-
-    

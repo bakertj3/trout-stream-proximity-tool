@@ -42,7 +42,7 @@
 
 ---
 
-### Wednesday, Feb 25 - Session 2 (30 min)
+### Wednesday, Feb 25 - Session 2 (30 min) - COMPLETE
 
 **Goal:** Verify PA data exists and is accessible
 
@@ -65,7 +65,7 @@
 
 ---
 
-### Friday, Feb 27 - Session 3 (90 min)
+### Friday, Feb 27 - Session 3 (90 min) - COMPLETE
 
 **Goal:** Get GeoPandas working with hello world
 
@@ -105,7 +105,7 @@ print(world.head())
 
 ---
 
-### Saturday/Sunday, Feb 28/Mar 1 - Session 4 (90 min)
+### Saturday/Sunday, Feb 28/Mar 1 - Session 4 (90 min) - COMPLETE
 
 **Goal:** Prove you can load PA stream data
 
@@ -133,7 +133,7 @@ print(world.head())
 
 ---
 
-### Sunday, Mar 1 - Weekly Review (30 min)
+### Sunday, Mar 1 - Weekly Review (30 min) - COMPLETE
 
 **Review questions:**
 
@@ -145,6 +145,7 @@ print(world.head())
 **Decision:**
 
 - [x] GO: Proceed to Week 2 development
+  - ***Post Week 1 sessions will be planned week-by-week during Sunday reviews based on learning progress***
 - [ ] PIVOT: Adjust approach (simpler tool?)
 - [ ] KILL: Document learnings, move on
 
@@ -154,356 +155,55 @@ print(world.head())
 
 ---
 
-## Week 2: Mar 3-8 (Core Development Begins)
+## Week 2 Plan (March 3-8)
 
-### Phase 2: TDD Development
+### Tuesday, March 3 - Session 5 (90 min)
 
-### Tuesday, Mar 3 - Session 5 (90 min)
+**Focus:** Pandas Fundamentals
 
-**Goal:** First real test - load stream data
+**Structure:**
 
-**Write this test:**
+- Part 1 (45 min): Structured exercises with coaching
+  - DataFrame basics (load, inspect, access columns)
+  - Filtering & boolean indexing
+  - Common operations (count, group, sort)
+- Part 2 (45 min): Exploratory work with real PA stream data
+  - Trevor tries exercises for 5-10 min each
+  - Then coaching begins with hints/questions
+  - Build personal cheat sheet as he goes
 
-```python
-def test_can_load_class_a_streams():
-    """Can we load PA Class A stream data?"""
-    streams = load_class_a_streams()
-    assert streams is not None
-    assert len(streams) > 0
-    assert 'geometry' in streams.columns
-```
+**Deliverable:** Pandas cheat sheet in Trevor's own words
 
-**Make it pass:**
+### Wednesday, March 4 - Session 6 (90 min)
 
-- Implement `load_class_a_streams()` function
-- Load PA data
-- Return GeoDataFrame
+**Focus:** Workflow Mapping & Development Roadmap
 
-**Output:**
+**Goals:**
 
-- [ ] Test passing
-- [ ] Code committed
-- [ ] Daily log updated
+- Map complete end-to-end workflow (address → distance calculation)
+- Break into logical, testable chunks
+- Identify what Pandas/GeoPandas knowledge each chunk needs
+- Create roadmap for development
+- Understand "next smallest test" strategy for each piece
 
----
+**Deliverable:** Visual workflow map + development roadmap document
 
-### Wednesday, Mar 4 - Session 6 (90 min)
+### Friday, March 6 - Session 7 (90 min)
 
-**Goal:** Filter streams by county
+**Focus:** TDD work on first workflow piece
 
-**Write this test:**
+- With roadmap in hand, choose first piece to implement
+- Trevor writes tests with coaching guidance
+- Practice "next smallest test" methodology
+- Focus on test structure/formatting
 
-```python
-def test_filter_streams_by_county():
-    """Can we filter streams to specific counties?"""
-    streams = load_class_a_streams()
-    centre_streams = filter_by_counties(streams, ['Centre'])
-    assert len(centre_streams) > 0
-    # All streams should be in Centre County
-```
+### Saturday/Sunday, March 7-8 - Session 8 (2 hours)
 
-**Make it pass:**
+**Focus:** Continue TDD development
 
-- Implement county filtering
-- Test with Centre, Clinton, Lycoming
-
-**Output:**
-
-- [ ] Test passing
-- [ ] County filtering works
-- [ ] Committed
-
----
-
-### Friday, Mar 6 - Session 7 (90 min)
-
-**Goal:** Geocoding - address to coordinates
-
-**Write this test:**
-
-```python
-def test_geocode_pa_address():
-    """Can we convert PA address to lat/lng?"""
-    lat, lng = geocode_address("123 Main St, State College, PA")
-    assert lat is not None
-    assert lng is not None
-    assert 39 < lat < 43  # Roughly PA latitude range
-    assert -81 < lng < -74  # Roughly PA longitude range
-```
-
-**Make it pass:**
-
-- Choose geocoding service (Census or Google)
-- Implement `geocode_address()` function
-- Handle errors
-
-**Output:**
-
-- [ ] Geocoding works
-- [ ] Test passing
-- [ ] Committed
-
----
-
-### Saturday/Sunday, Mar 7-8 - Session 8 (2 hours)
-
-**Goal:** Distance calculation
-
-**Write this test:**
-
-```python
-def test_find_nearest_stream():
-    """Can we find nearest stream to a point?"""
-    streams = load_class_a_streams()
-    lat, lng = 40.7934, -77.8600  # State College
-    
-    nearest_stream, distance_miles = find_nearest_stream(streams, lat, lng)
-    
-    assert nearest_stream is not None
-    assert distance_miles > 0
-    assert distance_miles < 50  # Sanity check
-```
-
-**Make it pass:**
-
-- Calculate geodesic distance
-- Find minimum distance
-- Return stream info and distance
-
-**Output:**
-
-- [ ] Distance calculation works
-- [ ] Test passing
-- [ ] Committed
-
----
-
-### Sunday, Mar 8 - Weekly Review (30 min)
-
-**Progress check:**
-
-- [ ] 4+ tests passing
-- [ ] Core functions working
-- [ ] On track for Week 3 goals
-
-**If behind:** Cut scope, reduce features
-
-- [ ] **Share dev log in our chat**
-
----
-
-## Week 3: Mar 9-15 (Integration)
-
-### Tuesday, Mar 10 - Session 9 (90 min)
-
-**Goal:** Public access point identification
-
-**Tasks:**
-
-- Load public access data (or State Game Lands)
-- Filter to public-accessible stream segments
-- Test finding nearest PUBLIC access
-
----
-
-### Wednesday, Mar 11 - Session 10 (90 min)
-
-**Goal:** End-to-end integration test
-
-**Write this test:**
-
-```python
-def test_full_workflow():
-    """Complete workflow: address → analysis → results"""
-    result = analyze_property("456 Oak St, Bellefonte, PA")
-    
-    assert result['nearest_class_a_miles'] is not None
-    assert result['property_coords'] is not None
-    assert result['stream_name'] is not None
-```
-
-**Make it pass:**
-
-- Integrate all functions
-- Return structured result
-
----
-
-### Friday, Mar 13 - Session 11 (90 min)
-
-**Goal:** Error handling
-
-**Write tests for:**
-
-- Invalid address
-- Address outside PA
-- No streams nearby
-
-- **Make robust**
-
----
-
-### Saturday/Sunday, Mar 14-15 - Session 12 (2 hours)
-
-**Goal:** Map visualization prototype
-
-**Tasks:**
-
-- Create basic Folium map
-- Add property marker
-- Add stream lines
-- Display in notebook/script first
-
----
-
-### Sunday, Mar 15 - Weekly Review (30 min)
-
-**Progress check:**
-
-- [ ] Integration working
-- [ ] Error handling added
-- [ ] Map displays
-- [ ] Ready for UI
-
-- [ ] **Share dev log**
-
----
-
-## Week 4: Mar 16-22 (UI & Polish)
-
-### Tuesday, Mar 17 - Session 13 (90 min)
-
-**Goal:** Streamlit app skeleton
-
-**Create:**
-
-- Text input for address
-- Button to analyze
-- Display results area
-
----
-
-### Wednesday, Mar 18 - Session 14 (90 min)
-
-**Goal:** Integrate map into Streamlit
-
-**Tasks:**
-
-- Display Folium map in Streamlit
-- Show results text
-- Handle loading states
-
----
-
-### Friday, Mar 20 - Session 15 (90 min)
-
-**Goal:** Polish UI
-
-**Tasks:**
-
-- Better layout
-- Error messages
-- Loading indicators
-- Instructions
-
----
-
-### Saturday/Sunday, Mar 21-22 - Session 16 (2 hours)
-
-**Goal:** Code cleanup
-
-**Tasks:**
-
-- Remove debug prints
-- Add docstrings
-- Clean git history
-- One cleanup pass
-
----
-
-### Sunday, Mar 22 - Weekly Review (30 min)
-
-**Progress check:**
-
-- [ ] App works end-to-end
-- [ ] Ready for documentation
-- [ ] On track to ship Friday
-
-- [ ] **Share dev log**
-
----
-
-## Week 5: Mar 23-29 (Documentation & Ship)
-
-### Tuesday, Mar 24 - Session 17 (90 min)
-
-**Goal:** README.md
-
-**Create:**
-
-- Problem statement
-- Setup instructions
-- Usage examples
-- Screenshots
-
-**Test:** Have someone follow your README
-
----
-
-### Wednesday, Mar 25 - Session 18 (90 min)
-
-**Goal:** Write ADRs
-
-**Create 2-3 ADRs:**
-
-1. `001-tech-stack-selection.md`
-2. `002-distance-calculation-approach.md`
-3. `003-public-access-methodology.md`
-
-Use ADR template
-
----
-
-### Friday, Mar 27 - Session 19 (2 hours)
-
-#### SHIP DAY
-
-**Tasks:**
-
-1. Final testing
-2. Tag v1.0 release
-3. Push to GitHub
-4. Take screenshots
-5. Write LinkedIn post
-6. Share it!
-
-**LinkedIn post template:**
-
-```text
-I just shipped Trout Stream Proximity Tool! 🎣
-
-This tool helps property hunters in Pennsylvania assess proximity to Class A wild trout waters using GIS analysis.
-
-Built with Python, GeoPandas, and Streamlit, this was my first project using spatial data analysis. Key technical challenge: integrating PA Fish & Boat Commission GIS data with geocoding to calculate distances to public fishing access.
-
-I designed it with ethical considerations in mind - focusing on public access points to promote responsible fishing rather than enabling trespassing.
-
-Check it out: [GitHub link]
-
-#Python #GIS #SoftwareDevelopment #OpenSource
-```
-
----
-
-### Sunday, Mar 29 - Final Review (30 min)
-
-**Reflection:**
-
-- Write LESSONS_LEARNED.md
-- Update resume
-- Plan next project (or celebrate!)
-
-- [ ] **Share final dev log**
+- Build on Friday's work
+- Practice test-first development with real project code
+- Refine understanding of when to write next test
 
 ---
 

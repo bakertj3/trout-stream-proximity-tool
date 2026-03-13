@@ -12,6 +12,8 @@ stream_details = pd.json_normalize(features)
 
 
 print("------------------ STREAM DATA DETAILS ------------------")
+print("--- ALL DATA ---")
+print(stream_details)
 print("--- COLUMNS ---")
 print(stream_details.columns)
 print("--- SHAPE ---")
@@ -37,3 +39,5 @@ print(streams_with_creek_in_name["properties.WtrName"])
 print("--- Stream with longest name ---")
 longest_stream_index = stream_details["properties.WtrName"].str.len().idxmax()
 print(stream_details.loc[longest_stream_index, "properties.WtrName"])
+
+print(stream_data["features"][0]["geometry"].keys())
