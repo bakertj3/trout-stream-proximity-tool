@@ -14,5 +14,5 @@ def return_closest_stream(address):
 
     result["nearest_stream_name"] = nearest_stream["WtrName"]
     result["nearest_stream_distance_miles"] = nearest_dist
-    result["stream_geometry"] = {"type": "", "geometry":[]}
+    result["stream_geometry"] = nearest_stream["geometry"]
     return result

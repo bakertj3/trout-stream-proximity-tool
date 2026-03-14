@@ -1,4 +1,5 @@
 import src.proximity_analyzer as prox
+from shapely.geometry.base import BaseGeometry
 
 
 def test_return_closest_stream_should_have_dictionary_values():
@@ -12,7 +13,7 @@ def test_return_closest_stream_should_have_dictionary_values():
     assert result["address_coords"] != None
     assert result["nearest_stream_name"] != ""
     assert result["nearest_stream_distance_miles"] > 0
-    assert result["stream_geometry"] != {}
+    assert result["stream_geometry"] is not None
 
 def test_return_closest_stream_should_have_latlng_keys_and_nonzero_values():
     # Arrange
@@ -42,8 +43,19 @@ def test_return_closest_stream_different_addresses_should_have_different_results
     address1 = "Harrisburg, PA"
     address2 = "Pittsburgh, PA"
     
-    # Arrange
+    # Act
     result1 = prox.return_closest_stream(address1)
     result2 = prox.return_closest_stream(address2)
 
+    # Assert
     assert result1["nearest_stream_name"] != result2["nearest_stream_name"]
+
+def test_return_closest_stream_should_return_geometry_for_stream_mapping():
+    # Arrange
+    address = "Lock Haven, PA"
+
+    # Act
+    result = prox.return_closest_stream(address)
+
+    # Assert
+    assert isinstance(result["stream_geometry"], BaseGeometry)
