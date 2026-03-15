@@ -247,7 +247,63 @@ e0fc9a79e6bcea91bed52b129d92f14ca0778c22
 
 - worked through TDD incremental steps to implement functionality in `proximity_analyzer.py`
 - wrestled with what to return for `return_closest_stream()` output
-- 
+- couldn't figure out how to get the stream geometry into a dictionary format from the geometry series in the DataSeries
+
+### What I learned
+
+- continued to reinforce incremental TDD thinking through writing tests to get to code implementation
+
+### What's next
+
+- write next test for verifying stream geometry from nearest_stream object
+
+## 3/14/2026 - Session 10
+
+### What happened
+
+- tried to verify type of stream geometry in a learning module `learning/geopandas_exercise_stream_data.py`
+- struggled with importing directories in python project, found solution, adding to "What I learned" section
+- Learned that stream line definitions in a GeoPandas series is an instance of t a Shapely object
+- wrote final test for asserting geometry is a shapely BaseGeometry type
+- Integration tests & implementation for orchestration layer complete
+  
+### What I learned
+
+- add `[tools.setuptools] packages = ["src"]` to `pyproject.toml` to reference `src/` module from anywhere in project
+  - run `uv pip install -e .` to install in editable mode for the project
+  - NOTE: Editable install `-e .` tells python to treat project directory as an importable package without copying files
+- Online docs are generally quickest for determining library/module class hierarchies
+
+### What's next
+
+- Explore Folium in `learning/` directory
+- Determine what I need to convert Shapely stream geometry to Folium format
+- write tests for the mapping
+
+## 3/14/2026 - 3/5/2026 - Session 11
+
+### What happened
+
+- explored mapping in Folium using `learning/folium_map_basics.py`
+- explored shapely datatypes, properties and functions
+- discovered that geojson coordinates list [lng, lat] - folium needs [lat, lng]
+- learned mapping lines and polygons in Folium
+
+## What I learned
+
+- Folium needs lat/lng coords in order [Lat, Lng]
+- GeoJson files order the coordinates [Lng, Lat], so conversion will need to be done before mapping
+- Shapely has functions to determine if shapes intersect, overlap, etc
+
+### What's next
+
+- begin writing tests for the mapping layer
+  - need to ensure mapping uses folium's fit_bounds, but need to ensure that bounds are calulated encapsulating address and stream bounds
+- use TDD for incremental development of mapping layer implementation
+
+## 3/15/2026 - Week 3 review
+
+### What happened
 
 ### What I learned
 
