@@ -41,3 +41,28 @@ for point in coord_set:
 stream_line = folium.PolyLine(locations=coords, color="#FF0000")
 stream_line.add_to(m)
 m.save("test_map.html")
+
+
+# multiline stream test - Kunkletown, PA - Hunter Creek
+town_coords = geocode.address_geocode("Kunkletown, PA")
+coords = list()
+coords.append(town_coords["lat"])
+coords.append(town_coords["lng"])
+m2 = folium.Map(location=coords)
+town_marker = folium.Marker(location=coords)
+town_marker.add_to(m2)
+
+nearest_stream = prox.return_closest_stream("Spruce Hollow Road, Kunkletown, PA")
+print(nearest_stream)
+coord_set = nearest_stream["stream_geometry"].coords
+print(coord_set)
+coords = []
+for point in coord_set:
+    point_list = list(point)
+    rev_coords = point_list[::-1]
+    coords.append(rev_coords)
+
+stream_line = folium.PolyLine(locations=coords, color="#FF0000")
+stream_line.add_to(m)
+
+m2.save("test_map_multilinestring.html")

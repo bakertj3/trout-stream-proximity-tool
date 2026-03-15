@@ -280,7 +280,7 @@ e0fc9a79e6bcea91bed52b129d92f14ca0778c22
 - Determine what I need to convert Shapely stream geometry to Folium format
 - write tests for the mapping
 
-## 3/14/2026 - 3/5/2026 - Session 11
+## 3/14/2026 - 3/15/2026 - Session 11
 
 ### What happened
 
@@ -305,6 +305,21 @@ e0fc9a79e6bcea91bed52b129d92f14ca0778c22
 
 ### What happened
 
+- Finished geocoding TDD
+- Built orchestration layer (`proximity_analyzer.py`)
+- Explored Folium/Shapely in `learning/`
+
 ### What I learned
 
+- Python app architecture (orchestration layers)
+- Inequality assertion syntax
+- Editable install (`pip install -e .`)
+- GeoJSON coordinate order (lng, lat)
+- Shapely geometry types
+- API doc navigation
+
 ### What's next
+
+- Mapping layer tests (MultiLineString, bounds/zoom)
+- Streamlit exploration if time allows
+- Add session time tracking
