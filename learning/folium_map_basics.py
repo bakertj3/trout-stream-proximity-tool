@@ -1,6 +1,7 @@
 import folium
 import src.address_geocode as geocode
 import src.proximity_analyzer as prox
+import pprint
 
 m = folium.Map(location=[40.7934, -77.8600]) # State College, PA
 
@@ -30,7 +31,7 @@ bounds_list = list(stream_bounds)
 map_bounds = [[bounds_list[1],bounds_list[0]],[bounds_list[1], bounds_list[2]],[bounds_list[3], bounds_list[2]],[bounds_list[3], bounds_list[0]]]
 stream_box = folium.Polygon(map_bounds, color="#DDD000")
 stream_box.add_to(m)
-print(map_bounds)
+#print(map_bounds)
 
 coords = []
 for point in coord_set:
@@ -39,6 +40,7 @@ for point in coord_set:
     coords.append(rev_coords)
 
 stream_line = folium.PolyLine(locations=coords, color="#FF0000")
+#print(dir(stream_line))
 stream_line.add_to(m)
 m.save("test_map.html")
 
@@ -53,16 +55,23 @@ town_marker = folium.Marker(location=coords)
 town_marker.add_to(m2)
 
 nearest_stream = prox.return_closest_stream("Spruce Hollow Road, Kunkletown, PA")
-print(nearest_stream)
-coord_set = nearest_stream["stream_geometry"].coords
-print(coord_set)
-coords = []
-for point in coord_set:
-    point_list = list(point)
-    rev_coords = point_list[::-1]
-    coords.append(rev_coords)
+print(dir(nearest_stream["stream_geometry"]))
+mult = nearest_stream["stream_geometry"].geoms
+for line in mult:
+    print(line)
+#coord_set = nearest_stream["stream_geometry"].coords
+#print(coord_set)
+#coords = []
+#for point in coord_set:
+#    point_list = list(point)
+#    rev_coords = point_list[::-1]
+#   coords.append(rev_coords)
 
-stream_line = folium.PolyLine(locations=coords, color="#FF0000")
-stream_line.add_to(m)
+#stream_line = folium.PolyLine(locations=coords, color="#FF0000")
+#stream_line.add_to(m)
 
-m2.save("test_map_multilinestring.html")
+#m2.save("test_map_multilinestring.html")
+
+test_data = prox.return_closest_stream("Bellefonte, PA")
+
+pprint.pprint(test_data["stream_geometry"])

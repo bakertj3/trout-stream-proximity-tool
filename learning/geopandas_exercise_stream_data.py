@@ -20,7 +20,7 @@ print(stream_geometry.geom_type)
 # looking for streams with multiline geometry:
 stream_geometry = stream_data.geometry
 multline_streams = stream_geometry[shapely.get_num_geometries(stream_geometry) > 1].head(1).index
-multi_stream = stream_data.iloc[multline_streams] #Kunkletown, PA
+multi_stream = stream_data.iloc[multline_streams] #Kunkletown, PA - Hunter Creek
 print(multi_stream)
 print(multi_stream["WtrName"])
 

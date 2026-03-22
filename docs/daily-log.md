@@ -323,3 +323,37 @@ e0fc9a79e6bcea91bed52b129d92f14ca0778c22
 - Mapping layer tests (MultiLineString, bounds/zoom)
 - Streamlit exploration if time allows
 - Add session time tracking
+
+## 3/18/2026, 3/21/2026, 3/22/2026 - Session 12
+
+### Time tracking
+
+- Sesion A: 3/18/2026 - 9:21p - 9:28p
+- Session B: 3/18/2026 - 10:35p - 10:50p
+- Session C: 3/21/2026 - 9:30a - 10:50a
+- Session D: 3/21/2026 - 11:30a - 11:50a
+- Session E: 3/22/2026 - 12p - 12:15p
+- Session F: 3/22/2026 - 2:30p - 5:00p
+
+### What happened
+
+- established what a TDD test looks like for a framework like Folium
+- looked up encoding a string into json string with json.JSONEncoder.encode()
+  - didn't end up needing for test data arrangement
+- wrote 3 tests with passing implementation
+- discovered how to locate undocumented attributes of python libraries
+- wrote 3 more tests with passing implementation, including mutlilinestring handling
+
+### What I learned
+
+- Classes in python follow PEP 8 naming conventions - classes => PascalCase (e.g., "ClassName")
+- How to discover unpublished attributes of python frameworks/libraries:
+  - use `dir(object)` to get a list of all attributes, public and private
+  - Read library source code on GitHub or public repo
+  - Search stack overflow for testing example code
+  - Check library's own test files
+- Learned similarities and differences in shapely's LineString and MultiLineString
+
+### What's next
+
+- write tests to cover map bounds and zoom for folium map object
