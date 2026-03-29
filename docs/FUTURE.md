@@ -9,3 +9,4 @@
   - what happens if geocoding fails?
   - what if no streams are found?
 - Add python library attribute discovery to a Python/testing cheatsheet (see daily log - Session 12)
+- Map address Marker displays tooltip of address

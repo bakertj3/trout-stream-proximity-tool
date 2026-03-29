@@ -289,7 +289,7 @@ e0fc9a79e6bcea91bed52b129d92f14ca0778c22
 - discovered that geojson coordinates list [lng, lat] - folium needs [lat, lng]
 - learned mapping lines and polygons in Folium
 
-## What I learned
+### What I learned
 
 - Folium needs lat/lng coords in order [Lat, Lng]
 - GeoJson files order the coordinates [Lng, Lat], so conversion will need to be done before mapping
@@ -357,3 +357,56 @@ e0fc9a79e6bcea91bed52b129d92f14ca0778c22
 ### What's next
 
 - write tests to cover map bounds and zoom for folium map object
+- write tests to ensure there is stream information displayed on map object
+
+## 3/22/2026 - Week 4 review
+
+### What happened
+
+- completed session 12 across 6 small timeblocks during the week
+- Folium mapping layer TDD - 6 tests written & passing
+- Practiced problem solving by referencing library documentation before asking Claude
+
+### What I learned
+
+- using dir(object) for inspecting a library's internals that may not be documented with the API
+- Handling Linestring vs Multilinestring geometries
+- PEP 8 Naming conventions (Pascal Case for classes)
+
+### What's next
+
+- Complete final tests for mapping layer (bounds/zoom, labeling)
+- Verify end-to-end test with saved HTML map
+- Start Streamlit UI exploration if time allows
+
+## 3/24/2026 - Session 13
+
+### Time tracking
+
+- Sesion A: 3/24/2026 - 5:40p - 6:10p
+- Session B: 3/24/2026 - 7:30p - 8:15p
+- Session C: 3/26/2026 - 9:45p - 10:30p
+- Session D: 3/27/2026 - 7:15a - 8:15a
+- Session E: 3/28/2026 - 8:30a - 9:15a
+- Session F: 3/28/2026 - 7:40p - 8:10
+- Session G: 3/28/2026 - 9:20p - 10:20p
+- Session H: 3/29/2026 - 1:10p - 2:10p
+
+### What happened
+
+- struggled through verifying that folium map bounds encompass objects added to the map
+- discovered that folium automatically handles fitting map bounds tochild objects
+- removed 2 tests written to verify that the map encompassed the address and the stream bounds
+- wrote tests for verifying stream name is in tooltip and stream info is in popup of stream line
+- added `Percent_PublicLand` variable to the output of `return_closest_stream()` in `proximity_analyzer.py` using a TDD approach
+
+### What I learned
+
+- Sometimes 3rd party platforms handle functionality that developer expects to have to implement in code.
+- When documentation is not complete, learning what functionality exists in a library is only learned through discovery
+- branca.element.Element - requires render() method to get actual html output to assert against
+- learned how to limit decimal displays for float's f-strings - `{float:.3f}`
+
+### What's next
+
+- Explore Streamlit UI framework

@@ -59,3 +59,13 @@ def test_return_closest_stream_should_return_geometry_for_stream_mapping():
 
     # Assert
     assert isinstance(result["stream_geometry"], BaseGeometry)
+
+def test_return_closest_stream_should_return_percent_on_public_land():
+    # Arrange
+    address = "Galeton, PA"
+
+    # Act
+    result = prox.return_closest_stream(address)
+
+    # Assert
+    assert result["percent_on_public_land"] != None
