@@ -410,3 +410,23 @@ e0fc9a79e6bcea91bed52b129d92f14ca0778c22
 ### What's next
 
 - Explore Streamlit UI framework
+
+## 3/29/2026 - Week 5 review
+
+### What happened
+
+- Completed mapping layer with information in tooltips and popups
+- Ensured proper multiline handling in all of the test development
+- Wrote tests to verify functionality that folium already covers by default
+- Deleted tests that covered folium functionality because they didn't add anything to this project's code
+
+### What I learned
+
+- Test application code, not the framework code
+- Discover python library functionality using dir() and reading source code
+- `branca` rendering
+- f-string float formatting
+
+### What's next
+
+- Streamlit UI exploration, tests, implementation
