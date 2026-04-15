@@ -430,3 +430,46 @@ e0fc9a79e6bcea91bed52b129d92f14ca0778c22
 ### What's next
 
 - Streamlit UI exploration, tests, implementation
+
+## 4/1/2026 - Session 14
+
+### Time Tracking
+
+- Session A: 4/5/2026 - 9:25a - 9:40a
+- Session B: 4/5/2026 - 11:00a - 11:15a
+- Session C: 4/5/2026 - 12:00p - 12:15p
+
+### What Happened
+
+- Installed streamlit in project
+- Investigated built in app testing in Streamlit
+
+### What I learned
+
+- Streamlit has its own test framework
+
+### What's next
+
+## 4/11/2026, 4/12/2026 - Session 15
+
+### Time Tracking
+
+- 4/11/2026 - 9:45a - 10:30a
+- 4/12/2026 - 2:20p - 2:50p
+- 4/12/2026 - 6:00p - 6:15p
+- 4/13/2026 - 9:30a - 10:45a
+- 4/14/2026 - 9:45p - 10:15p
+
+### What happened
+
+- Wrote 4 tests for the streamlit app
+- all 4 tests passing
+
+### What I learned
+
+- Learned about how to mock with unittest.mock, specifically `patch()` as a decorator for the test methods
+- Learned that Folium display in streamlit is helped by using the streamlit-folium library
+
+### What's next
+
+- write several more tests for the streamlit app to verify functionality of map display

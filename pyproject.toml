@@ -10,6 +10,7 @@ dependencies = [
     "mapclassify>=2.10.0",
     "matplotlib>=3.10.8",
     "pytest>=9.0.2",
+    "streamlit>=1.56.0",
 ]
 [tool.setuptools]
 packages = ["src"]
