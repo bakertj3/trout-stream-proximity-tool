@@ -473,3 +473,29 @@ e0fc9a79e6bcea91bed52b129d92f14ca0778c22
 ### What's next
 
 - write several more tests for the streamlit app to verify functionality of map display
+
+## 4/19/2026 - Week 6-8 Review
+
+### Time tracking
+
+- 4/19/2026 - 9:15a - 11:15a
+  
+### What happened
+
+- started project review of past 2-3 weeks to establish plan to meet launch deadline
+- ran app in streamlit to evaluate current state
+- fix streamlit map rendering issues
+- removed 1 test that was essentially testing the streamlit framework, not my code
+
+### What I learned
+
+- map rendering is good enough
+- some javascript blocking caused the streamlit app to not render address markers from CDN
+- streamlit `on_click` callback should reference the function name.  if method defined as `on_click="Function_Name()"` the function will be called whent the app renders
+
+### What's next
+
+- get stream distance to display on app in text only    
+- update README.md with actual install instructions
+- update PROJECT-DEFINITIONS.md with pivots made during development
+- tag release on GitHub
