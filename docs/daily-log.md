@@ -495,7 +495,7 @@ e0fc9a79e6bcea91bed52b129d92f14ca0778c22
 
 ### What's next
 
-- get stream distance to display on app in text only    
+- get stream distance to display on app in text only
 - update README.md with actual install instructions
 - update PROJECT-DEFINITIONS.md with pivots made during development
 - tag release on GitHub

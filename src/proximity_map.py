@@ -1,18 +1,14 @@
 import folium
 import shapely
-import src.address_geocode as geocode
-import src.proximity_analyzer as analyzer
 
-def generate_proximity_map(address):
-    address_coords = geocode.address_geocode(address)
+def generate_proximity_map(closest_stream):
+    address_coords = closest_stream["address_coords"]
     mappable_address_coords = [address_coords["lat"],address_coords["lng"]]
 
     m = folium.Map(mappable_address_coords)
 
     address_marker = folium.Marker(location=mappable_address_coords)
     address_marker.add_to(m)
-
-    closest_stream = analyzer.return_closest_stream(address)
 
     stream_geometry = closest_stream["stream_geometry"]
     stream_name = closest_stream["nearest_stream_name"]

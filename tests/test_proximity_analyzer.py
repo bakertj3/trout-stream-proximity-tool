@@ -69,3 +69,13 @@ def test_return_closest_stream_should_return_percent_on_public_land():
 
     # Assert
     assert result["percent_on_public_land"] != None
+
+def test_return_closest_stream_should_return_input_address_in_result():
+    # Arrange
+    address = "Coudersport, PA"
+
+    #Act
+    result = prox.return_closest_stream(address)
+
+    # Assert
+    assert result["address"] == address
