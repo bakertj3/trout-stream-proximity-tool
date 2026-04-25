@@ -499,3 +499,48 @@ e0fc9a79e6bcea91bed52b129d92f14ca0778c22
 - update README.md with actual install instructions
 - update PROJECT-DEFINITIONS.md with pivots made during development
 - tag release on GitHub
+
+## 4/22/2026 - Session 16
+
+### Time tracking
+
+- Session A: 5:25p - 6:25p
+- Session B: 7p - 7:30p
+
+### What happened
+
+- Wrote tests for label to display info for results of stream search
+- Confirmed app functions with addresses within PA
+
+### What I learned
+
+- Learned about streamlit markdown object display
+
+### What's next
+
+- Finalize app functionality
+
+## 4/22/2026 - Session 17
+
+### Time tracking
+
+Session A: 10:40a - 12:10p
+
+### What happened
+
+- Resolved text results flashing on page reload by using a container (Tests first)
+- Attempted to add st_folium map display to container, but couldn't determine how to display it correctly in the container
+- Finished up UI tweaking, attempting to maintain close-to-mvp ideals
+
+### What I learned
+
+- To polish streamlit app, more time would need to be invested in learning more of the streamlit functionality
+- The `streamlit-folium` library outputs a dictionary of user interaction data that displays when trying render st_folium in streamlit container
+
+### What's next
+
+- update README.md to outline actual deployment instructions
+- update README.md with the How and Why of this project
+- review FUTURE.md to refine list for items that are relevant for future iterations
+- update PROJECT-DEFINITIONS.md with pivots made during development
+- tag release on GitHub and post about it
