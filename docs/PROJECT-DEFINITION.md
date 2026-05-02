@@ -2,11 +2,11 @@
 
 ## One-Sentence Pitch
 
-Trout Stream Proximity Tool helps property hunters and anglers assess proximity to Pennsylvania's Class A wild trout waters by analyzing PA Fish & Boat classification data and calculating distances to public access points.
+Trout Stream Proximity Tool helps property hunters assess proximity to Pennsylvania's Class A wild trout waters by analyzing PA Fish & Boat stream classification data and calculating distances to the nearest Class A stream.
 
 ## The Problem This Solves
 
-When house hunting in rural PA, it's impossible to know how close a property is to quality public wild trout fishing. Real estate listings don't include this information, and manually cross-referencing maps is tedious and error-prone. This tool automates the spatial analysis.
+When property hunting in rural PA, it's impossible to know how close a parcel is to quality wild trout fishing. Real estate listings don't include this information, and manually cross-referencing maps is tedious and error-prone. This tool automates the spatial analysis.
 
 ## Ethical Design Decision
 
@@ -18,26 +18,26 @@ This tool focuses on PUBLIC access points to avoid enabling trespassing on priva
 
 **Functional Requirements:**
 
-- [ ] User can input a single property address
-- [ ] Tool calculates distance to nearest Class A wild trout public access
-- [ ] Interactive map displays property location, streams, and access points
-- [ ] Results show straight-line distance in miles
-- [ ] Works for Centre, Clinton, and Lycoming counties
-- [ ] No crashes on valid Pennsylvania addresses
+- [x] User can input a single property address
+- [x] Tool calculates distance to nearest Class A wild trout stream
+- [x] Interactive map displays property location and nearest stream
+- [x] Results show straight-line distance in miles
+- [x] Works for all Pennsylvania addresses against statewide Class A stream data
+- [x] No crashes on valid Pennsylvania addresses
 
 **Quality Requirements:**
 
-- [ ] README with working setup instructions
-- [ ] At least 3 passing tests
-- [ ] 2-3 ADRs documenting key decisions
-- [ ] Demo screenshot showing working map
+- [x] README with working setup instructions
+- [x] At least 3 passing tests
+- [x] 2-3 ADRs documenting key decisions
+- [x] Demo screenshot showing working map
 
 **Shipping Requirements:**
 
-- [ ] Code on GitHub (public repo)
+- [x] Code on GitHub (public repo)
 - [ ] Shared on LinkedIn
-- [ ] Added to resume
-- [ ] Tagged as v1.0 release
+- [x] Added to resume
+- [x] Tagged as v1.0 release
 
 **Ship Date:** Friday, April 24, 2026
 **Kill Date:** Friday, May 1, 2026
@@ -53,30 +53,23 @@ This tool focuses on PUBLIC access points to avoid enabling trespassing on priva
 
 2. **Stream Data Loading**
    - Load PA Fish & Boat Class A Wild Trout stream data
-   - Filter to Centre, Clinton, Lycoming counties
    - Parse stream geometries
 
-3. **Public Access Analysis**
-   - Identify public access points OR
-   - Use stream segments on public lands (State Game Lands/Forests)
-   - Calculate straight-line (geodesic) distance from property
-
-4. **Distance Calculation**
-   - Find nearest Class A public access point
+3. **Distance Calculation**
+   - Find nearest Class A public stream
    - Calculate geodesic distance in miles
    - Account for Earth's curvature
 
-5. **Map Visualization**
-   - Interactive map (Folium or Leaflet)
-   - Show property location (marker)
-   - Show Class A streams (blue lines)
-   - Show public access points (green markers)
-   - Display distance measurement
+4. **Map Visualization**
+   - Interactive map (Folium)
+   - Property location marker
+   - Nearest Class A stream line
+   - Stream tooltip displaying stream name on hover
+   - Stream popup displaying stream name, distance from address, and percent on public land on click
 
-6. **Results Display**
-   - Text summary: "Nearest Class A public access: X.X miles"
-   - Map with all elements
-   - Export map as HTML
+5. **Results Display**
+   - Narrative summary: "The Class A trout stream nearest to [address] is: [stream name], which is [distance] mile(s) away."
+   - Interactive map with stream and address marker
 
 ---
 
@@ -95,10 +88,7 @@ This tool focuses on PUBLIC access points to avoid enabling trespassing on priva
 
 **Geographic Scope:**
 
-- Centre County
-- Clinton County  
-- Lycoming County
-- (Other PA counties in future versions)
+- PA Statewide Class A stream data
 
 ---
 
@@ -109,7 +99,6 @@ This tool focuses on PUBLIC access points to avoid enabling trespassing on priva
 - Driving distance/turn-by-turn directions
 - Multiple address batch processing
 - Other stream classifications (Naturally Reproducing, Approved)
-- Additional PA counties beyond the initial 3
 - Property boundary data integration
 - Saved searches or bookmarking
 - User accounts/authentication
@@ -391,13 +380,11 @@ This tool focuses on PUBLIC access points to avoid enabling trespassing on priva
 - Easy to add other classifications in v2.0
 - Keeps scope manageable for learning GIS
 
-**Why These Counties:**
+**Why statewide geographic scope:**
 
-- Centre: Familiar area, good data quality
-- Clinton: Kettle Creek (legendary waters)
-- Lycoming: Pine Creek (quality streams)
-- Good geographic spread for testing
-- All have State Game Lands for public access
+- The statewide GeoJSON dataset was already available and complete, requiring no additional filtering logic to subset by county.
+- Calculating distance across the entire dataset was simpler and more accurate than filtering by county first.
+- If limiting to a subset of PA counties, it would be possible for the nearest stream to actually be located in a neighboring county, which would be masked due to the county filtering.
 
 **Why Straight-Line Distance:**
 
@@ -414,12 +401,11 @@ This tool focuses on PUBLIC access points to avoid enabling trespassing on priva
 
 1. Driving distance via Google Maps API
 2. Additional stream classifications
-3. More PA counties
-4. Batch address processing
-5. Property boundary integration
-6. Saved searches
-7. Mobile-responsive UI
-8. Performance optimization
+3. Batch address processing
+4. Property boundary integration
+5. Saved searches
+6. Mobile-responsive UI
+7. Performance optimization
 
 **Separate private tool (future project):**
 
@@ -434,30 +420,47 @@ This tool focuses on PUBLIC access points to avoid enabling trespassing on priva
 
 ```markdown
 trout-stream-proximity-tool/
-├── PROJECT-DEFINITION.md (this file)
-├── UNKNOWNS.md
-├── FUTURE.md
-├── daily-log.md
+├── data
+│   └── Class A Trout Streams.geojson
+├── docs
+│   ├── adr
+│   │   ├── 001-geocoding-api-selection.md
+│   │   ├── 002-distance-calculation-methodology.md
+│   │   └── 003-geographic-scope.md
+│   ├── daily-log.md
+│   ├── EXECUTION-PLAN.md
+│   ├── FUTURE.md
+│   ├── images
+│   │   └── screenshot.png
+│   ├── PANDAS-CHEATSHEET.md
+│   ├── PROJECT-DEFINITION.md
+│   ├── PYTHON-CHEATSHEET.md
+│   └── UNKNOWNS.md
+├── learning
+│   ├── folium_map_basics.py
+│   ├── folium_map_properties.py
+│   ├── geopandas_exercise_stream_data.py
+│   ├── google_geocode_api_basics.py
+│   ├── pandas_basics.py
+│   └── pandas_exercise_stream_data.py
+├── LICENSE
+├── main.py
+├── pyproject.toml
 ├── README.md
-├── requirements.txt
-├── .gitignore
-├── docs/
-│   └── adr/
-│       ├── 001-tech-stack.md
-│       ├── 002-distance-calculation.md
-│       └── 003-public-access-approach.md
-├── src/
-│   ├── geocoding.py
-│   ├── stream_data.py
-│   ├── distance_calc.py
-│   └── app.py (Streamlit)
-├── tests/
-│   ├── test_geocoding.py
-│   ├── test_stream_data.py
-│   └── test_distance_calc.py
-└── data/ (gitignored, local only)
-    ├── streams/
-    └── public_access/
+├── src
+│   ├── __init__.py
+│   ├── address_geocode.py
+│   ├── app.py
+│   ├── proximity_analyzer.py
+│   ├── proximity_map.py
+│   └── stream_data.py
+└── tests
+    ├── __init__.py
+    ├── test_address_geocode.py
+    ├── test_app.py
+    ├── test_proximity_analyzer.py
+    ├── test_proximity_map.py
+    └── test_stream_data.py
 ```
 
 ---
@@ -470,13 +473,12 @@ I commit to:
 - Time-boxing research to 4 hours
 - Working 8-10 hours per week
 - Weekly check-ins and progress sharing
-- Shipping by March 28 or killing by April 4
+- Shipping by April 24 or killing by May 1
 - No exceptions, no extensions beyond kill date
 
-Signed: [Your name]
+Signed: Trevor Baker
 Date: February 21, 2026
 
 ---
 
-**Status: READY TO BEGIN**
-**Next Step: Phase 1 Research (Week of Feb 24-27)**
+## **Status: v1.0 SHIPPED**

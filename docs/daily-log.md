@@ -544,3 +544,21 @@ Session A: 10:40a - 12:10p
 - review FUTURE.md to refine list for items that are relevant for future iterations
 - update PROJECT-DEFINITIONS.md with pivots made during development
 - tag release on GitHub and post about it
+
+## 5/1/2026 - Session 18
+
+### Time tracking
+
+Session A: 2p - 3p
+
+### What happened
+
+- Revised README.md with details about app and installation instructions
+- added ADR-001
+
+### What I learned
+
+- in a python project, the pyproject.toml provides all the dependencies for the project and allows a user to install using `pip install -e .`
+- ADR files generally use kebab-case (000-name-of-decision.md)
+
+### What's next

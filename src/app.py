@@ -11,7 +11,9 @@ if 'submit_clicked' not in st.session_state:
 
 def display_map():
     st.session_state.submit_clicked = True
-    
+
+st.set_page_config(page_title="Trout Stream Proximity Tool")
+
 st.title("Trout Stream Proximity Tool")
 
 st.text_input(label="Address", key="address_input")

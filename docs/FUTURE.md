@@ -12,3 +12,4 @@
 - Map address Marker displays tooltip of address
 - Map auto-zoomed displays better zoom level by default (streams close to address are not displayed in the closest possible zoom, currently)
 - streamlist map aspect ratio improvements
+- utilize Form element in streamlit app address input

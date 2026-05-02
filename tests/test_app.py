@@ -1,6 +1,10 @@
 """test_app.py"""
 from streamlit.testing.v1 import AppTest
-from unittest.mock import patch
+from unittest.mock import patch, MagicMock
+
+class FormattedMock(MagicMock):
+    def __format__(self, format_spec):
+        return f"{MagicMock:.3f}"
 
 def test_app_has_address_input_field():
     # Arrange / # Act
@@ -42,7 +46,7 @@ def test_app_info_text_displayed_after_button_click():
     assert result_label != None
 
 # After page reloads, Address is not blank, and submit button clicked, the map should be generated and displayed
-@patch('src.proximity_map.generate_proximity_map')
+@patch('src.proximity_map.generate_proximity_map', new_callable=FormattedMock)
 @patch('src.proximity_analyzer.return_closest_stream')
 def test_app_displays_map_with_successful_address_submission(mock1,mock2):
     # Arrange
@@ -62,10 +66,12 @@ def test_app_displays_map_with_successful_address_submission(mock1,mock2):
 # After submit button clicked, functions are not called if address field is blank
 @patch('src.proximity_map.generate_proximity_map')
 @patch('src.proximity_analyzer.return_closest_stream')
-def test_app_blank_address_does_not_call_map_functions(mock1,mock2):
+def test_app_blank_address_does_not_call_map_functions(mock1, mock2):
     # Arrange
     at = AppTest.from_file("../src/app.py").run()
     address_button = at.button[0]
+
+
 
     # Act
     address_button.click().run()

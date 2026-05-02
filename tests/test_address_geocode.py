@@ -1,5 +1,4 @@
-from src.address_geocode import *
-import googlemaps as gmap
+from src.address_geocode import address_geocode
 import pytest
 
 def test_invalid_address_should_throw_value_error():
