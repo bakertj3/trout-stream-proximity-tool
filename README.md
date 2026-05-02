@@ -77,3 +77,5 @@ I was responsible for:
 - Test design and implementation  
 - Problem-solving and debugging
 - Scope adjustments based on real constraints
+
+For full project scope and decisions, see [PROJECT-DEFINITION.md](docs/PROJECT-DEFINITION.md).
