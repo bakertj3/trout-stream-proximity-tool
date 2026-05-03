@@ -550,6 +550,7 @@ Session A: 10:40a - 12:10p
 ### Time tracking
 
 Session A: 2p - 3p
+Session B: 4:45p - 5:45p
 
 ### What happened
 
@@ -562,3 +563,6 @@ Session A: 2p - 3p
 - ADR files generally use kebab-case (000-name-of-decision.md)
 
 ### What's next
+
+- Finalize documentation
+- Ship the app

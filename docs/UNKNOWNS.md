@@ -19,7 +19,7 @@ These are blockers. Must research and decide in Week 1.
   - **Rationale:**
     - leverages pandas, which is common package
     - free to use
-    - no database (PostGIS has PostgreSQL back end - possible fo V2)
+    - no database (PostGIS has PostgreSQL back end - possible for V2)
     - well documented
     - other users can use app without licensing
 
